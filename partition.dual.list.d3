@@ -1,0 +1,15 @@
+bl3_ca72_a:2M@build-main/tmp/deploy/images/tcc8050-main/ca72_bl3.rom
+boot:60M@build-main/tmp/deploy/images/tcc8050-main/tc-boot-tcc8050-main.img
+system:6245M@build-main/tmp/deploy/images/tcc8050-main/topst-tcc8050-main.ext4
+dtb:200K@build-main/tmp/deploy/images/tcc8050-main/tcc8050-linux-topst-d3-pre-v0.1.dtb
+env:1M@
+misc:1M@
+splash:40M@
+home:500M@##TEMPDIR##/home-directory.ext4
+bl3_ca53_a:2M@build-sub/tmp/deploy/images/tcc8050-sub/ca53_bl3.rom
+subcore_boot:30M@build-sub/tmp/deploy/images/tcc8050-sub/tc-boot-tcc8050-sub.img
+subcore_dtb:200K@build-sub/tmp/deploy/images/tcc8050-sub/tcc8050-linux-subcore-topst-d3-pre-v0.1.dtb
+subcore_env:1M@
+subcore_misc:1M@
+subcore_root:570M@build-sub/tmp/deploy/images/tcc8050-sub/topst-subcore-tcc8050-sub.ext4
+data:1M@##TEMPDIR##/user-data.ext4

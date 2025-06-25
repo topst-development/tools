@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<snor_config_data>
+    <snor num_io="spi" mode_io="str" clk_src="0" clk_div="49" gpio_ds_enable="disable" gpio_ds="3"/>
+    <timing value="0x00040230"/>
+    <delay_so value="0x00000500"/>
+    <dc_clk value="0x00000000"/>
+    <dc_wbd0 value="0x00000000"/>
+    <dc_wbd1 value="0x00000000"/>
+    <dc_rbd0 value="0x00000000"/>
+    <dc_rbd1 value="0x00000000"/>
+    <dc_woebd0 value="0x00000000"/>
+    <dc_woebd1 value="0x00000000"/>
+    <mode value="0x000000015"/>
+    <man_base0 value="0x0000080C"/>
+    <man_base1 value="0x0000080C"/>
+    <auto_base value="0x00000800"/>
+    <code>
+        0x84000003,
+        0x48000001,
+        0x28000000,
+        0xF4000000
+    </code>
+</snor_config_data>

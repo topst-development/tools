@@ -1,0 +1,6 @@
+{
+    "hsm" : ".\\prebuilt\\hsm.cs.bin",
+    "fwdn" : ".\\prebuilt\\fwdn.rom",
+    "dram" : ".\\prebuilt\\dram_params.bin",
+    "mcert" : ".\\prebuilt\\mcert.bin"
+}

@@ -1,0 +1,14 @@
+{
+	"mcert" : ".\\prebuilt\\mcert.bin",
+	"hsm" : ".\\prebuilt\\hsm.bin",
+	"fwdn" : ".\\prebuilt\\ca53_bl1.rom",
+	"dram" : ".\\prebuilt\\dram_params.bin",
+	"bl2" : ".\\prebuilt\\ca53_bl2.rom",
+	"bl3" : ".\\prebuilt\\fwdn.rom",
+	"opmode" : "ethernet",
+	"ipaddrmode" : "static",
+	"ip" : "192.168.0.100",
+	"mask" : "255.255.255.0",
+	"gateway" : "0.0.0.0",
+    "port" : "8080"
+}

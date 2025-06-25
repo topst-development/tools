@@ -1,0 +1,13 @@
+{
+    ".\\prebuilt\\bconf.single.bin" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000000"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000000"}],
+    ".\\prebuilt\\mcert.bin" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000001"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000001"}],
+    ".\\prebuilt\\dram_params.bin" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000002"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000002"}],
+    ".\\prebuilt\\hsm.cs.bin" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000008"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000008"}],
+    ".\\prebuilt\\scfw.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000448"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000448"}],
+    ".\\prebuilt\\optee.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000E48"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000E48"}],
+    ".\\prebuilt\\subcore_optee.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00001650"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00001650"}],
+    ".\\prebuilt\\ca72_bl1.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000648"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000648"}],
+    ".\\prebuilt\\ca53_bl1.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000848"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000848"}],
+    ".\\prebuilt\\ca72_bl2.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000A48"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000A48"}],
+    ".\\prebuilt\\ca53_bl2.rom" : [{"storage" : "emmc", "area" : "boot0", "addr" : "0x00000C48"}, {"storage" : "emmc", "area" : "boot1", "addr" : "0x00000C48"}]
+}

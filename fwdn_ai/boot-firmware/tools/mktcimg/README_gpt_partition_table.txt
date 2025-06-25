@@ -1,0 +1,5 @@
+bl3_ca53_a:2048k@../ca53_bl3.rom
+bl3_ca53_b:2048k@../ca53_bl3.rom
+boot:40960k@
+dtb:1024k@
+data:0k@

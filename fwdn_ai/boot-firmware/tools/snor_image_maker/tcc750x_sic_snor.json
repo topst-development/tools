@@ -1,0 +1,14 @@
+{
+    "area0": {
+        ".\\prebuilt\\mxic_mx25l6433f_QPI_100_STR.bin" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000000"}],
+        ".\\prebuilt\\mcert.bin" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000001"}],
+        ".\\prebuilt\\hsm.bin" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000002"}],
+        ".\\prebuilt\\sic-fw.rom" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000042"}]
+    },
+    "area1": {
+        ".\\prebuilt\\mxic_mx25l6433f_QPI_100_STR.bin" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000400"}],
+        ".\\prebuilt\\mcert.bin" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000401"}],
+        ".\\prebuilt\\hsm.bin" : [{"storage" : "snor", "area" : "die1", "addr" : "0x000000402"}],
+        ".\\prebuilt\\sic-fw.rom" : [{"storage" : "snor", "area" : "die1", "addr" : "0x00000442"}]
+    }
+}

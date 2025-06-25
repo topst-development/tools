@@ -1,0 +1,8 @@
+bl3_ca53_a:2M@build/ai-g-topst/tmp/deploy/images/ai-g-topst/u-boot.rom
+bl3_ca53_b:2M@build/ai-g-topst/tmp/deploy/images/ai-g-topst/u-boot.rom
+boot:40M@build/ai-g-topst/tmp/deploy/images/ai-g-topst/tc-boot-ai-g-topst.img
+system:4G@build/ai-g-topst/tmp/deploy/images/ai-g-topst/telechips-topst-ai-image-ai-g-topst.ext4
+dtb:200K@build/ai-g-topst/tmp/deploy/images/ai-g-topst/tcc7500-lpd4x321.dtb
+env:1M@
+misc:1M@
+

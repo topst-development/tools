@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<boot_config_data>
+	<!--
+		** sdmmc options for BL0
+		speed
+			- high: high speed 50MHz
+			- normal: normal speed 25MHz
+		buswidh - 8, 4, 1
+		opmode
+			- dma: sdma mode
+			- pio: pio mode
+	-->
+	<sdmmc speed="high" buswidth="8" opmode="dma"/>
+	<!--
+		** boot option
+		imgmaptype
+			- 0: BL3 image in user, OPTEE image in boot part
+			- 1: BL3 image/OPTEE image in boot part
+			- 2: BL3 image in boot part, OPTEE image in user
+		corerst
+			- enable: enable core reset
+			- disable: disable core reset
+			           do cold reset on core reset request
+	-->
+	<bootconfig imgmaptype="0" corerst="enable"/>
+	<!--
+		** per-core debug port options
+		enable
+			- 0: Disable printing debug log
+			- 1: Enable printing debug log
+	-->
+	<debug>
+		<main enable="0"/>
+	</debug>
+	<!--
+		 ** per-core ab update options at BL1 (TF-A BL2)
+			enable
+				- 0: Disable ab update. Use redundant boot only.
+				- 1: Enable ab update.
+			type
+				- 0: only for bl3
+				- 1: for bl3 and op-tee
+				- 2: for bl3, op-tee and bl2
+	-->
+	<ab_update>
+		<main enable="0" type="0"/>
+	</ab_update>
+</boot_config_data>

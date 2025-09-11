@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<boot_config_data>
+	<!--
+		** sdmmc options for BL0
+		speed
+			- high: high speed 50MHz
+			- normal: normal speed 25MHz
+		buswidh - 8, 4, 1
+		opmode
+			- dma: sdma mode
+			- pio: pio mode
+	-->
+	<sdmmc speed="high" buswidth="8" opmode="dma"/>
+	<!--
+		** ufs options for BL0
+		opmode
+			dma: DMA(4K boundary) + Memcpy by CPU(Remaining size)
+			pio: Memcpy by CPU (UFS temp buffer → Target Address))
+		speed
+			- g3: high speed Gear 3 mode
+			- g2: high speed Gear 2 mode
+			- g1: high speed Gear 1 mode
+			- pwm: pwm mode
+		lane
+			- 1lane : 1 data lane
+			- 2lane : 2 data lanes
+		read_cmd
+			- read16 : Use READ16 command
+			- read10 : Use READ10 command
+		hs_series
+			- readA : Use HS RATE A
+			- readB : Use HS RATE B
+	-->
+	<ufs opmode="dma" speed="g1" lane="1lane" hs_series="rateB" read_cmd="read10"/>
+	<!--
+		** boot option
+		bootsel
+			- dual: boot with main/sub cores
+			- single: boot with main core only
+		imgmaptype
+			- 0: BL3 image in user, OPTEE image in boot part
+			- 1: BL3 image/OPTEE image in boot part
+			- 2: BL3 image in boot part, OPTEE image in user
+		maincore
+			- ca72: ca72 is the main core, init dram
+			- ca53: ca53 is the main core, init dram
+			- ctrl: mcu decides the main core, controls starting
+		corerst
+			- enable: enable core reset
+			- disable: disable core reset
+			           do AP system reset on core reset request
+		apsysrst
+			- enable: enable AP system reset
+			- disable: disable AP system reset
+			           do cold reset on AP system reset request
+	-->
+	<bootconfig bootsel="dual" imgmaptype="0" maincore="ca72" corerst="enable" apsysrst="enable"/>
+	<!--
+		** per-core debug port options
+		enable
+			- 0: Disable printing debug log
+			- 1: Enable printing debug log
+		port
+			- numeric value which represents uart port to use
+	-->
+	<debug>
+		<ca72 enable="0" port="18"/>
+		<ca53 enable="0" port="9"/>
+	</debug>
+	<!--
+		** storage core firmware configurations
+		*** mmc : mmc configurations
+			speed: emmc clock speed (MHz)
+				- The speed is set at 185.7 MHz instead of 200 MHz considering the deviation.
+			speed_mode: emmc speed mode settings
+				- hs400es
+				- hs400
+				- hs200
+				- ddr
+				- high
+				- default
+			clk_gate: emmc clock gating (default: 0)
+				- 1: emmc clock is automatically gated.
+				- 0: emmc clock is not automatically gated.
+			otap: OTAPDLYSEL register value
+				- min: 0, max: 31
+			clk_tap: TX_CLK_DLEY register value
+				- min: 0, max: 31
+			hs400_rx_pos: DQS_90 register value
+				- min: 0, max: 15
+			hs400_rx_neg: DQS_180 register value
+				- min: 0, max: 15
+		*** ckc : ckc configurations. "0" means to use default value.
+			This option is valid in eMMC only or eMMC+SNOR boot.
+			pll_p: PLL p value (default: 3)
+			pll_m: PLL m value (default: 325)
+			pll_s: PLL s value (default: 0)
+			sub_clk: core and sub system clock speed (MHz) (default: 325)
+		*** ufs : ufs configuration
+			gear : ufs gear level
+				- 0 : pwm
+				- 1 : gear1
+				- 2 : gear2
+				- 3 : gear3
+			lane : ufs lane count
+				- 0 : 2Lane
+				- 1 : 1Lane
+			rate : ufs rate selection
+				- 0 : RateB
+				- 1 : RateA
+			amp : ufs TX Amplitude
+				- 0 ~ 31 (default : 16)
+			emph : ufs TX De-emphasis
+				- 0 ~ 3 (default : 0)
+			eq : ufs RX EQ
+				- 0 ~ 7 (default : 0)
+			cfg_ctrl : Enable or Disable ufs configuration setting
+				- 0 : disable
+				- 1 : enable
+	-->
+	<scfw protect="enable">
+		<mmc speed="186" speed_mode="hs400es" clk_gate="0"
+			otap="15" clk_tap="15" hs400_rx_pos="5" hs400_rx_neg="12"/>
+		<ckc pll_p="0" pll_m="0" pll_s="0" sub_clk="0"/>
+		<ufs gear="3" lane="0" rate="Rate_B" amp="16" emph="0" eq="0" cfg_ctrl="0"/>
+	</scfw>
+	<!--
+		** AP-MCU IPC configuration for external MCU use-case
+		device
+			- none: use internal MCU
+			- uart
+			- gpsb
+		port: port number for UART or GPSB
+		baudrate: UART baud rate (max: 115200)
+	-->
+	<ipc device="none"/>
+	<!--
+		 ** per-core ab update options at BL1 (TF-A BL2)
+			enable
+				- 0: Disable ab update. Redundant-boot is working only.
+				- 1: Enable ab update.
+			type
+				- 0: only for bl3
+				- 1: for bl3 and op-tee
+				- 2: for bl3, op-tee and bl2
+	-->
+	<ab_update>
+		<ca72 enable="0" type="0"/>
+		<ca53 enable="0" type="0"/>
+	</ab_update>
+	<!--
+		** power management configuration
+		str
+			- enable (default)
+			- disable
+	-->
+	<pm str="enable"/>
+</boot_config_data>

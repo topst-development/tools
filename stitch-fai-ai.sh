@@ -58,7 +58,7 @@ shift $((OPTIND-1))
 
 [ "${1:-}" = "--" ] && shift
 
-OUTPUT="${1:-output_aig}"
+OUTPUT="${1:-output_nd}"
 
 TMPDIR=$(realpath $(mktemp -d ./.stitch_XXXXXXX))
 
@@ -104,11 +104,11 @@ if [ $WITH_FWDN -eq 1 ]; then
 		tools/fwdn_ai/* \
 		$TMPDIR
 
-	sed -i "s,##MODE##,$MODE,g" $TMPDIR/fwdn_aig.bat
-	sed -i "s,##OUTPUT##,$OUTPUT,g" $TMPDIR/fwdn_aig.bat
+	sed -i "s,##MODE##,$MODE,g" $TMPDIR/fwdn_nd.bat
+	sed -i "s,##OUTPUT##,$OUTPUT,g" $TMPDIR/fwdn_nd.bat
 
-	sed -i "s,##MODE##,$MODE,g" $TMPDIR/fwdn_aig.sh
-	sed -i "s,##OUTPUT##,$OUTPUT,g" $TMPDIR/fwdn_aig.sh
+	sed -i "s,##MODE##,$MODE,g" $TMPDIR/fwdn_nd.sh
+	sed -i "s,##OUTPUT##,$OUTPUT,g" $TMPDIR/fwdn_nd.sh
 
 	rm -f "${OUTPUT}.fwdn.zip"
 	cd $TMPDIR

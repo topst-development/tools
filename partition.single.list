@@ -1,4 +1,4 @@
 bl3_ca72_a:2M@build/d3-g-topst-main/tmp/deploy/images/d3-g-topst-main/ca72_bl3.rom
 boot:60M@build/d3-g-topst-main/tmp/deploy/images/d3-g-topst-main/tc-boot-d3-g-topst-main.img
-system:16G@build/d3-g-topst-main/tmp/deploy/images/d3-g-topst-main/telechips-topst-image-d3-g-topst-main.ext4
 dtb:200K@build/d3-g-topst-main/tmp/deploy/images/d3-g-topst-main/tcc8050-topst-d3-g.dtb
+system:16G@build/d3-g-topst-main/tmp/deploy/images/d3-g-topst-main/telechips-topst-image-d3-g-topst-main.ext4

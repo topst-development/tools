@@ -17,7 +17,7 @@ if /i "%port_num%" == "" (
 )
 
 echo.
-set FWDN_EXE=fwdn_aig.exe
+set FWDN_EXE=fwdn_nd.exe
 
 echo.
 echo Step 1. Connect between Host PC and TOPST AI-G 
@@ -33,7 +33,7 @@ echo Step 3. Download boot-firmware
 
 echo.
 echo Step 4. Download FAI file (system image)
-%FWDN_EXE% --fwdn boot-firmware\tcc750x_fwdn.json --write output_aig.fai --storage emmc --area user --port %port_num%
+%FWDN_EXE% --fwdn boot-firmware\tcc750x_fwdn.json --write output_nd.fai --storage emmc --area user --port %port_num%
 
 echo.
 echo TOPST AI-G FWDN is complete!

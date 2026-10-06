@@ -6,7 +6,7 @@ echo TOPST AI-G FWDN Batch File
 @echo off
 echo.
 echo Find Port.
-wmic path win32_pnpentity get caption /format:table| find "COM" 
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-CimInstance Win32_PnPEntity | Where-Object { $_.Name -match '\(COM[0-9]+\)' } | Select-Object -ExpandProperty Name"
 
 :SET_PORT
 echo.
